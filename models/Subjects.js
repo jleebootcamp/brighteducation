@@ -13,16 +13,16 @@ Subjects.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    grade_level: {
+    grade_level:{
       type: DataTypes.INTEGER,
       allowNull: false,
     },
 
-   tutor_id: {
+   tutor_id:{
         type: DataTypes.INTEGER,
         references: {
-            model : 'tutor',
-            key: 'tutor_id',
+            model :'tutor',
+            key:'tutor_id',
         },
       },
       
