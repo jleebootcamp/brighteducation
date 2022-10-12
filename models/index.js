@@ -20,6 +20,7 @@ Subjects.hasMany(Enrollments, {
     foreignKey:'student_id',
     onDelete: 'CASCADE',
   });
+
   Students.hasMany(Enrollments, {
     foreignKey:'student_id',
     onDelete: 'CASCADE',
@@ -29,9 +30,16 @@ Subjects.hasMany(Enrollments, {
     onDelete: 'CASCADE',
   });
 
-Enrollments.belongsTo(Tag, {
-  through: ProductTag,
-  foreignKey: 'product_id',  
+Enrollments.belongsTo(Subjects, {
+  foreignKey:'subject_id',  
+  onDelete: 'CASCADE',
+});
+Enrollments.belongsTo(Students, {
+  foreignKey:'student_id',  
+  onDelete: 'CASCADE',
+});
+Enrollments.belongsTo(Tutors, {
+  foreignKey:'tutor_id',  
   onDelete: 'CASCADE',
 });
 
