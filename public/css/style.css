@@ -1,0 +1,10 @@
+.loginsection {
+    text-align: center;
+}
+
+.navbar {
+    background-color: rgb(201, 199, 199);
+    opacity: .8;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
