@@ -21,7 +21,7 @@ Tutors.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-      years_experience: {
+    years_experience: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
