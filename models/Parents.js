@@ -2,12 +2,12 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Students extends Model {}
+class Parents extends Model {}
 
-Students.init(
+Parents.init(
   {
     // define columns
-    student_id: {
+    parent_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -21,9 +21,12 @@ Students.init(
           type: DataTypes.STRING,
           allowNull: false,
       },
-    grade_level: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      student_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model : 'students',
+            key: 'student_id',
+        },
       },
     },
     
@@ -32,7 +35,7 @@ Students.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'students',
+    modelName: 'parents',
   }
 );
-module.exports = Students;
+module.exports = Parents;
