@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Enrollmetns extends Model {}
+class Enrollments extends Model {}
 
-Enrollmetns .init(
+Enrollments .init(
   {
     // define columns
     class_id: {
@@ -41,7 +41,7 @@ Enrollmetns .init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName:'enrollmetns',
+    modelName:'enrollments',
   }
 );
-module.exports = Enrollmetns;
+module.exports = Enrollments;
