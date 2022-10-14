@@ -18,6 +18,6 @@ const subjectsdata = [
     },
 ];
 
-const seedSubjects= () => Tutors.bulkCreate(subjectsdata );
+const seedSubjects= () => Subjects.bulkCreate(subjectsdata );
 
 module.exports = seedSubjects;

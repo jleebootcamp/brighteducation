@@ -21,7 +21,7 @@ Subjects.init(
    tutor_id:{
         type: DataTypes.INTEGER,
         references: {
-            model :'tutor',
+            model :'tutors',
             key:'tutor_id',
         },
       },

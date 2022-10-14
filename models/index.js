@@ -11,6 +11,7 @@ Tutors.hasMany(Enrollments, {
   foreignKey: 'tutor_id',
   onDelete: 'CASCADE',
 });
+
 Subjects.hasMany(Enrollments, {
     foreignKey:'subject_id',
     onDelete: 'CASCADE',
