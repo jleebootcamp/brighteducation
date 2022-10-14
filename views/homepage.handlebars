@@ -1,0 +1,67 @@
+<div class="container-fluid">
+<div class="row hero-row">
+<div class="hero-container">
+    <div id="mobile-hero" class="hero">
+        <img src="../images/pexel-header.jpg">
+          <div class="hero-tite-container">
+            <h1 id="headline">Bright Education</h1>
+            <div class="hero-btn-container">
+                {{#if logged_in}}
+                <a id="hero-sign-in-btn" class="hero-btn" href="/dashboard">Dashboard</a>
+                {{else}}
+                <a id="hero-sign-in-btn" class="hero-btn" href="/login">SignIn</a>
+                <a id="hero-sign-up-btn" class="hero-btn" href="/signup">SignUp</a>
+                {{/if}}
+            </div>
+          </div>
+      </div>
+</div>
+<div class="slider"></div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row about-container">
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 about-text-container">
+      <div id="about-heading"><h2>Who are we?</h2><hr></div>
+      <p class="homepage-quotes">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today." - Malcolm X</p>
+      <p>Our team of designers and engineers wanted to benefit academic thinkers, to service additional tutoring services locally.
+        Bright Education was designed with Malcolm X's words in mind. 
+        Here, we can exchange our services amongst our community with the help of modern technology.</p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 about-image-container">
+      <img id="about-image-company" src="../images/pexels-tutors.jpg">
+    </div>
+  </div>
+  <div class="row offer-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 offer-image-container">
+      <img src="../images/pexels-kindergardners.jpg">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 offer-text-container">
+      <div id="offer-heading"><h2>What do we offer?</h2><hr></div>
+      <p class="homepage-quotes">“Our expert tutors provide comprehensive tutoring across all subjects for students from kindergarten through high school.”</p>
+      <p>Bright Education offers a digital space for our broader community of qualified tutors to interact, engage with, and provide for our students. 
+        Do you or your child need additional academic assistance?
+        Generate a request and wait for one of our community of tutors to respond in your inbox, or search other requests in our city/town.</p>
+      {{#if logged_in}}
+      <a href="/dashboard">Go to dashboard</a>
+      {{else}}
+      <a href="/signup">Sign up today</a>
+      {{/if}}
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid bottom-full-container">
+    <div class="row bottom-container">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 bottom-image-container">
+          <img src="../images/pexels-try-it.jpeg">
+          <div class="bottom-title-container">
+            <h3>Are you ready to try it?</h3>
+            {{#if logged_in}}
+              <a href="/dashboard">Go to dashboard</a>
+            {{else}}
+              <a href="/signup">Sign up today</a>
+            {{/if}}
+          </div>
+        </div>
+    </div>
+  </div>
