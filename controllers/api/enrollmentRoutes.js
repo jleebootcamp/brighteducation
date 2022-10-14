@@ -2,10 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Enrollments } = require('../../models');
 
-const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Enrollments } = require('../../models');
-
 // GET all class enrollments
 router.get('/', async (req, res) => {
     try {
