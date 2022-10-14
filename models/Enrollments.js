@@ -16,21 +16,21 @@ Enrollments .init(
     subject_id:{
         type: DataTypes.INTEGER,
         references: {
-            model :'subject',
+            model :'subjects',
             key:'subject_id',
         },
       },
       student_id:{
         type: DataTypes.INTEGER,
         references: {
-            model :'student',
+            model :'students',
             key:'student_id',
         },
       },
       tutor_id:{
         type: DataTypes.INTEGER,
         references: {
-            model :'tutor',
+            model :'tutors',
             key:'tutor_id',
         },
       },
