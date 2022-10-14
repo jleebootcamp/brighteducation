@@ -8,13 +8,13 @@ const studentdata = [
        
     },
     {
-        first_name:'"Hermion',
+        first_name:'Hermion',
         last_name: 'Granger',
         grade_level: 2,
        
     },
     {
-        first_name:'"Tom',
+        first_name:'Tom',
         last_name: 'Cruise',
         grade_level: 3,
        
