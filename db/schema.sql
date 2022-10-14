@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS bright_db;
+CREATE DATABASE bright_db;
