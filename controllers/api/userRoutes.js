@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const User = require('../../models/User');
+const Users = require('../../models/Users');
 
 // GET all users
 router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll();
+    const userData = await Users.findAll();
     res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 // CREATE a new user
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userData = await Users.create(req.body);
     res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 // GET one user
 router.get('/:id', async (req, res) => {
   try {
-    const userData = await User.findByPk(req.params.id);
+    const userData = await Users.findByPk(req.params.id);
     if (!userData) {
       res.status(404).json({ message: 'No user with this id!' });
       return;
@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
 // UPDATE a user
 router.put('/:id', async (req, res) => {
   try {
-    const userData = await User.update(req.body, {
+    const userData = await Users.update(req.body, {
       where: {
         id: req.params.id,
       },
@@ -56,7 +56,7 @@ router.put('/:id', async (req, res) => {
 // DELETE a user
 router.delete('/:id', async (req, res) => {
   try {
-    const userData = await User.destroy({
+    const userData = await Users.destroy({
       where: {
         id: req.params.id,
       },
