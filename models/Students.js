@@ -14,17 +14,17 @@ Students.init(
       autoIncrement: true,
     },
     first_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      last_name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-      },
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     grade_level: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      },
+    },
     },
     
  {
