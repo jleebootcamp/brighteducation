@@ -13,17 +13,17 @@ const PORT = process.env.PORT || 3001;
 
 const handlebars = expressHandlebars.create({ helpers });
 
-const sess = {
-   secret: "Super secret secret",
-   cookie: {},
-   resave: false,
-   saveUninitialized: true,
-   store: new SequelizeStore({
-     db: process.env.DB_NAME,
-   }),
-};
+// const sess = {
+//    secret: "Super secret secret",
+//    cookie: {},
+//    resave: false,
+//    saveUninitialized: true,
+//    store: new SequelizeStore({
+//      db: process.env.DB_NAME,
+//    }),
+// };
 
-app.use(session(sess));
+// app.use(session(sess));
 
 app.engine("handlebars", handlebars.engine);
 app.set("view engine", "handlebars");
