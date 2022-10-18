@@ -4,18 +4,13 @@ const { Subjects } = require('../../models');
 
 // GET all subjects
 router.get('/', async (req, res) => {
-    try {
-      const subjectData = await Subjects.findAll({
-        include: [{ model: Subjects }],
-        attributes: {
-          include: [],
-        },
-      });
-      res.status(200).json(subjectData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  try {
+    const subjectData = await Subjects.findAll();
+    res.status(200).json(subjectData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
   
 // GET a single subject
   router.get('/:id', async (req, res) => {
