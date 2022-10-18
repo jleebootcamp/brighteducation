@@ -4,18 +4,13 @@ const { Tutors } = require('../../models');
 
 // GET all tutors
 router.get('/', async (req, res) => {
-    try {
-      const tutorData = await Tutors.findAll({
-        include: [{ model: Tutors }],
-        attributes: {
-          include: [],
-        },
-      });
-      res.status(200).json(tutorData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  try {
+    const tutorData = await Tutors.findAll();
+    res.status(200).json(tutorData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
   
 // GET a single tutor
   router.get('/:id', async (req, res) => {
