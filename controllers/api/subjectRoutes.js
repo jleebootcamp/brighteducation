@@ -1,22 +1,25 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Subjects } = require('../../models');
+const { Subjects, Enrollments } = require('../../models');
 
 // GET all subjects
 router.get('/', async (req, res) => {
-  try {
-    const subjectData = await Subjects.findAll();
-    res.status(200).json(subjectData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+    try {
+      const subjectData = await Subjects.findAll({
+        include: [{ model: Enrollments}],
+        attributes: {
+          include: [],
+        },
+      });
+      res.status(200).json(subjectData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
   
 // GET a single subject
   router.get('/:id', async (req, res) => {
-    try {
-      const driverData = await Subjects.findByPk(req.params.id, {
-        include: [{ model: Subjects }],
+    try {subjectData= await Subjects.findByPk(req.params.id, {
+        include: [{ model: Enrollments }],
         attributes: {
           include: [],
         },
@@ -48,7 +51,7 @@ router.put('/:id', async (req, res) => {
   try {
     const subjectData = await Subjects.update(req.body, {
       where: {
-        id: req.params.id,
+        subject_id: req.params.id,
       },
     });
     if (!subjectData[0]) {
@@ -66,7 +69,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const subjectData = await Subjects.destroy({
       where: {
-        id: req.params.id,
+        subject_id: req.params.id,
       },
     });
     if (!subjectData) {

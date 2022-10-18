@@ -1,11 +1,12 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Enrollments } = require('../../models');
+const { Enrollments, Students, Subjects, Tutors } = require('../../models');
 
 // GET all class enrollments
 router.get('/', async (req, res) => {
     try {
-      const enrollmentData = await Enrollments.findAll();
+      const enrollmentData = await Enrollments.findAll({
+        include: [{ model: Students }, { model: Subjects }, { model: Tutors }],
+    });
       res.status(200).json(enrollmentData);
     } catch (err) {
       res.status(500).json(err);
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
       const enrollmentData = await Enrollments.findByPk(req.params.id, {
-        include: [{ model: Enrollments }],
+        include: [{ model: Students }, { model: Subjects }, { model: Tutors }],
         attributes: {
           include: [],
         },
@@ -48,7 +49,7 @@ router.put('/:id', async (req, res) => {
   try {
     const enrollmentData = await Enrollments.update(req.body, {
       where: {
-        id: req.params.id,
+        class_id: req.params.id,
       },
     });
     if (!enrollmentData[0]) {
@@ -66,7 +67,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const enrollmentData = await Enrollments.destroy({
       where: {
-        id: req.params.id,
+        class_id: req.params.id,
       },
     });
     if (!enrollmentData) {
