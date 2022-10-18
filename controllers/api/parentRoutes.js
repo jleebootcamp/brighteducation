@@ -1,46 +1,73 @@
 const router = require("express").Router();
-const { Parents } = require("../../models");
+const Parents = require("../../models/Parents");
 
-router.post("/login", async (req, res) => {
+// GET all Parents
+router.get("/", async (req, res) => {
   try {
-    const ParentsData = await Parents.findOne({
-      where: { email: req.body.email },
-    });
+    const parentsData = await Parents.findAll();
+    res.status(200).json(parentsData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-    if (!ParentsData) {
-      res
-        .status(400)
-        .json({ message: "Invalid email or password, please try again." });
-      return;
-    }
-
-    const validPassword = await ParentsData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Invalid email or password, please try again." });
-      return;
-    }
-
-    req.session.save(() => {
-      req.session.Parents_id = ParentsData.parent_id;
-      req.session.logged_in = true;
-
-      res.json({ Parents: ParentsData, message: "You are now logged in!" });
-    });
+// CREATE a new Parent
+router.post("/", async (req, res) => {
+  try {
+    const parentsData = await Parents.create(req.body);
+    res.status(200).json(parentsData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
+// GET one Parent
+router.get("/:id", async (req, res) => {
+  try {
+    const parentsData = await Parents.findByPk(req.params.id);
+    if (!parentsData) {
+      res.status(404).json({ message: "No Parent with this id!" });
+      return;
+    }
+    res.status(200).json(parentsData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// UPDATE a Parent
+router.put("/:id", async (req, res) => {
+  try {
+    const parentsData = await Parents.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
     });
-  } else {
-    res.status(400).end();
+    if (!parentsData[0]) {
+      res.status(404).json({ message: "No Parent with this id!" });
+      return;
+    }
+    res.status(200).json(parentsData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// DELETE a Parent
+router.delete("/:id", async (req, res) => {
+  try {
+    const parentsData = await Parents.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!parentsData) {
+      res.status(404).json({ message: "No Parent with this id!" });
+      return;
+    }
+    res.status(200).json(parentsData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
