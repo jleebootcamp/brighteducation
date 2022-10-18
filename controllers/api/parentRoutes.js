@@ -35,11 +35,6 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-    res.status(200).json(parentData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // CREATE a new parent
 router.post('/', async (req, res) => {
