@@ -1,16 +1,18 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Students } = require('../../models');
+// const sequelize = require('../../config/connection');
+const { Students, Enrollments } = require('../../models');
 
 // GET all students
 router.get('/', async (req, res) => {
     try {
-      const studentData = await Students.findAll({
-        include: [{ model: Students }],
+      const studentData = await Students.findAll(
+        {
+        include: [{ model: Enrollments }],
         attributes: {
           include: [],
         },
-      });
+        }
+      );
       res.status(200).json(studentData);
     } catch (err) {
       res.status(500).json(err);
@@ -20,12 +22,14 @@ router.get('/', async (req, res) => {
   // GET a single student
   router.get('/:id', async (req, res) => {
     try {
-      const driverData = await Students.findByPk(req.params.id, {
-        include: [{ model: Students }],
+      const studentData = await Students.findByPk(req.params.id, 
+        {
+        include: [{ model: Enrollments }],
         attributes: {
           include: [],
         },
-      });
+        }
+      );
   
       if (!studentData) {
         res.status(404).json({ message: 'No student found with that id!' });
@@ -53,7 +57,7 @@ router.put('/:id', async (req, res) => {
   try {
     const studentData = await Students.update(req.body, {
       where: {
-        id: req.params.id,
+        student_id: req.params.id,
       },
     });
     if (!studentData[0]) {
@@ -71,7 +75,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const studentData = await Students.destroy({
       where: {
-        id: req.params.id,
+        student_id: req.params.id,
       },
     });
     if (!studentData) {
