@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Enrollments extends Model {}
 
-Enrollments .init(
+Enrollments.init(
   {
     // define columns
     class_id: {

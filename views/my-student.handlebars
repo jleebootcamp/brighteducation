@@ -1,0 +1,38 @@
+    <div id="mystudent">
+      <section class="hero is-info">
+        <div class="hero-body">
+          <div class="container">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <div class="control has-icons-left has-icons-right search-field">
+                    <input class="input is-large" type="text" placeholder="" v-model="search" /><span class="icon is-medium is-left"><i class="fa fa-search"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+          <div class="box cta">
+      </div>
+      <section class="container cards-container">
+        <div class="columns is-centered is-multiline" id="sectioncontainer">
+          <div class="column is-narrow" v-for="">
+            <article class="message" :class="">
+              <div class="message-header">
+                <p>{{ Student }}</p>
+                <button class="delete" aria-label="delete" @click=""></button>
+              </div>
+              <div class="message-body">
+                <div class="board-item">
+                  <div class="board-item-content" v-for="item in yxy.items"><span>{{ subject }}</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js'></script>
+  <script  src=""></script>
