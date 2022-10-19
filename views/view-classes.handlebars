@@ -1,23 +1,48 @@
-    <div id="viewclasses">
-          <div class="box cta">
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Class:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="subject-name">Subject name:</label>
+        <input class="form-input" type="text" id="subject-name" name="subject-name" />
       </div>
-      <section class="container cards-container">
-        <div class="columns is-centered is-multiline" id="sectioncontainer">
-          <div class="column is-narrow" v-for="">
-            <article class="message" :class="">
-              <div class="message-header">
-                <p>{{ teacher }}</p>
-                <button class="delete" aria-label="delete" @click=""></button>
-              </div>
-              <div class="message-body">
-                <div class="board-item">
-                  <div class="board-item-content" v-for="item in yxy.items"><span>{{ subject }}</span></div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      <div class="form-group">
+        <label for="grade_level">Grade level:</label>
+        <input class="form-input" type="number" id="grade_level" name="grade_level" />
+      </div>
+      <div class="form-group">
+        <label for="tutor_id">Tutor Id:</label>
+        <textarea class="form-input" id="tutor_id" name="tutor_id"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create Class</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if subjects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Subjects:</h3>
+
+    {{#each subjects as |subject|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/classes/{{subject.id}}">{{subject.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{subject.id}}">DELETE</button>
+      </div>
     </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js'></script>
-  <script  src=""></script>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/classes.js"></script>
