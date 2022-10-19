@@ -34,10 +34,12 @@
     {{#each subjects as |subject|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/classes/{{subject.id}}">{{subject.name}}</a></h4>
+        <h4><a href="/classes/{{subject.subject_id}}">{{subject.subject}}</a></h4>
+        <h6><a href="/classes/{{subject.subject_id}}"><span>Grade level:</span>{{subject.grade_level}}</a></h6>
+        <h6><a href="/classes/{{subject.subject_id}}"><span>Tutor Id:</span>{{subject.tutor_id}}</a></h6>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{subject.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{subject.subject_id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

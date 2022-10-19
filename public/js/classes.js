@@ -23,6 +23,21 @@ const newFormHandler = async (event) => {
   }
 };
 
+//Display subjects
+const subs = async () => {
+  const response = await fetch('/api/subjects', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/classes');
+  } else {
+    alert('Failed to display classes');
+  }
+};
+
+
 // Delete Class
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -47,3 +62,5 @@ document
 document
   .querySelector('.class-list')
   .addEventListener('click', delButtonHandler);
+
+subs();
