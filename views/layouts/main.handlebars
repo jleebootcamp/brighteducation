@@ -38,11 +38,11 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a href="/signup" class="button is-primary">
-                <strong>Sign up</strong>
+              <a {{#if logged_in}}{{else}} href="/signup" class="button is-primary">
+                <strong>Sign up{{/if}}</strong>
               </a>
               <a href="/login" class="button is-light">
-                Log in
+                {{#if logged_in}}Logout{{else}}Log in{{/if}}
               </a>
             </div>
           </div>
@@ -54,3 +54,5 @@
   </main>
   </body>
 </html>
+
+<script src="js/logout.js"></script>
