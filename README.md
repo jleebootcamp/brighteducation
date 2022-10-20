@@ -15,7 +15,7 @@
 Welcome to the future of education! With BrightEducation, you can enroll your child into any class where they may need to brush up on some skills or want to be challenged at a higher level. With our professionally certified teaching staff, we guarantee to enrich your child's education no matter the cause. Sign up today to view the available courses we have to offer and match with a tutor!
     
 ## Installation:
-You can find our app available online and ready to use. Just click [here](https://brighteducation.herokuapp.com/) and create your account today!
+You can find our app available online and ready to use. Just click [here](https://brighteducation.herokuapp.com/signup) and create your account today!
     
 ## Usage:
 Visit our app at https://brighteducation.herokuapp.com and you should be presented with the main page. If you head towards the upper right corner you are given the option to sign up or log in. If you click on sign up you will be directed to a sign up page in which you will provide user credentials. Once you are logged in, the navigation bar will show available classes to enroll in.
@@ -29,12 +29,12 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[License](https://www.mit.edu/~amini/LICENSE.md) 
+[View License](https://www.mit.edu/~amini/LICENSE.md) 
     
 ## Contribution:
 Bryan Sayavong, Cosmin Sandu, Joon Lee, Sheetal Jawale, & Stephen Novelli
     
-## Test:
+## Tests:
 No tests are required.
     
 ## Preview:
