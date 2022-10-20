@@ -16,12 +16,28 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/classes');
+      // document.location.replace('/classes');
     } else {
       alert('Failed to create classes');
     }
   }
 };
+
+//Display subjects
+const subs = async () => {
+  const response = await fetch('/api/subjects', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    //document.location.replace('/classes');
+    response.ok
+  } else {
+    alert('Failed to display classes');
+  }
+};
+
 
 // Delete Class
 const delButtonHandler = async (event) => {
@@ -33,7 +49,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/classes');
+      document.location.replace('/subjects');
     } else {
       alert('Failed to delete classes');
     }
@@ -47,3 +63,5 @@ document
 document
   .querySelector('.class-list')
   .addEventListener('click', delButtonHandler);
+
+subs();

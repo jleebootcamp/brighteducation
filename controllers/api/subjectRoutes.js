@@ -1,16 +1,39 @@
 const router = require('express').Router();
 const { Subjects, Enrollments } = require('../../models');
 
-// GET all subjects
-router.get('/', async (req, res) => {
+// // GET all subjects
+// router.get('/', async (req, res) => {
+//     try {
+//       const subjectData = await Subjects.findAll({
+//         include: [{ model: Enrollments}],
+//         attributes: {
+//           include: [],
+//         },
+//       });
+//       res.status(200).json(subjectData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
+
+  router.get('/', async (req, res) => {
     try {
-      const subjectData = await Subjects.findAll({
+      // Get all subjects and JOIN with user data
+      const subjectData = await Subjects.findAll(
+        {
         include: [{ model: Enrollments}],
-        attributes: {
-          include: [],
-        },
+        }
+      );
+  
+      // Serialize data so the template can read it
+      const subjects = subjectData.map((subject) => subject.get({ plain: true }));
+     console.log(subjects.length);
+
+      // Pass serialized data and session flag into template
+      res.render('view-classes', { 
+        subjects, 
+        logged_in: req.session.logged_in 
       });
-      res.status(200).json(subjectData);
     } catch (err) {
       res.status(500).json(err);
     }
