@@ -6,7 +6,7 @@
               <div class="card-content">
                 <div class="content">
                   <div class="control has-icons-left has-icons-right search-field">
-                    <input class="input is-large" type="text" placeholder="" v-model="search" /><span class="icon is-medium is-left"><i class="fa fa-search"></i></span>
+                    <input id="search" class="input is-large" type="text" placeholder="" v-model="search" /><span class="icon is-medium is-left"><i class="fa fa-search"></i></span>
                   </div>
                 </div>
               </div>
@@ -16,50 +16,40 @@
       </section>
         <div class="box cta">
           <div class="columns">
-  <div class="column">
-    <p class="bd-notification is-info">First column</p>
+  <div class="column has-background-success">
+    
+    <button type="click" class="button is-primary mt-4">
+      <h2> TEST {{ students }}</h2>
+    </button>
+
+    <p class="bd-notification is-info has-background-light">STUDENT</p>
     <div class="columns is-mobile">
       <div class="column">
-        <p class="bd-notification is-info">First nested column</p>
+        <p class="bd-notification is-info"></p>
+          <tbody>
+            {{#each students }}
+              <tr>
+                <td>\{{ first_name }}</td>
+                <td>{{ last_name }}</td>
+                <td>{{ grade_level }}</td>
+              </tr>
+            {{else}}
+              <p>No students to display</p>
+            {{/each}}
+          </tbody>
       </div>
-      <div class="column">
-        <p class="bd-notification is-info">Second nested column</p>
-      </div>
-    </div>
   </div>
-  <div class="column">
-    <p class="bd-notification is-danger">Second column</p>
+  <div class="column has-background-primary">
+    <p class="bd-notification is-danger has-background-light">ENROLLMENTS</p>
     <div class="columns is-mobile">
       <div class="column is-half">
-        <p class="bd-notification is-danger">50%</p>
+        <p class="bd-notification is-danger">SUBJECT</p>
       </div>
       <div class="column">
-        <p class="bd-notification is-danger">Auto</p>
-      </div>
-      <div class="column">
-        <p class="bd-notification is-danger">Auto</p>
+        <p class="bd-notification is-danger">TUTOR</p>
       </div>
     </div>
   </div>
 </div>
-        </div>
-      <section class="container cards-container">
-        <div class="columns is-centered is-multiline" id="sectioncontainer">
-          <div class="column is-narrow" v-for="">
-            <article class="message" :class="">
-              <div class="message-header">
-                <p>{{ Student }}</p>
-                <button class="delete" aria-label="delete" @click=""></button>
-              </div>
-              <div class="message-body">
-                <div class="board-item">
-                  <div class="board-item-content" v-for="item in yxy.items"><span>{{ subject }}</span></div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-    </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js'></script>
-  <script  src="js/students.js"></script>
+
+<script  src='./js/students.js'></script>
