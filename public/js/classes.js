@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/classes');
+      // document.location.replace('/classes');
     } else {
       alert('Failed to create classes');
     }
@@ -31,7 +31,8 @@ const subs = async () => {
   });
 
   if (response.ok) {
-    document.location.replace('/classes');
+    //document.location.replace('/classes');
+    response.ok
   } else {
     alert('Failed to display classes');
   }
@@ -48,7 +49,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/classes');
+      document.location.replace('/subjects');
     } else {
       alert('Failed to delete classes');
     }
