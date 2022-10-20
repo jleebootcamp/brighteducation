@@ -1,11 +1,11 @@
+// Add Class 
 const newFormHandler = async (event) => {
   event.preventDefault();
 
   const subject = document.querySelector('#subject-name').value.trim();
   const grade_level = document.querySelector('#grade_level').value.trim();
-  const tutor_id = document.querySelector('#tutor_id').value.trim();
+  const tutor_id = document.querySelector('#tutor_id').value.trim(); 
   
-  // Add Class 
   if ( subject && grade_level && tutor_id ) {
     const response = await fetch(`/api/subjects`, {
       method: 'POST',
@@ -23,21 +23,26 @@ const newFormHandler = async (event) => {
   }
 };
 
-//Display subjects
-const subs = async () => {
-  const response = await fetch('/api/subjects', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
+ //Display subjects
+ const showClasses = async () => {
 
-  if (response.ok) {
-    //document.location.replace('/classes');
-    response.ok
-  } else {
-    alert('Failed to display classes');
-  }
-};
+    const response = await fetch(`/api/subjects/`, {
+      method: 'GET',    
+    });
 
+    console.log(response);
+
+  //   if (response.ok) {
+  //     // document.location.replace('/view-classes');  
+  //     const subjects = response.map((subject) => subject.get({ plain: true }));
+  //     res.render('view-classes', { 
+  //       subjects, 
+  //       logged_in: req.session.logged_in 
+  //     });
+  //   } else {
+  //     alert('Failed to display classes');
+  //  }
+  };
 
 // Delete Class
 const delButtonHandler = async (event) => {
@@ -49,9 +54,9 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/subjects');
+      document.location.replace('/view-classes');
     } else {
-      alert('Failed to delete classes');
+      alert('Failed to delete class');
     }
   }
 };
@@ -60,8 +65,10 @@ document
   .querySelector('.new-class-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.class-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.class-list')
+//   .addEventListener('click', delButtonHandler);
 
-subs();
+document
+  .getElementById("viewclasses")
+  .addEventListener("click", showClasses);

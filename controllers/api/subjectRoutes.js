@@ -27,8 +27,7 @@ const { Subjects, Enrollments } = require('../../models');
   
       // Serialize data so the template can read it
       const subjects = subjectData.map((subject) => subject.get({ plain: true }));
-     console.log(subjects.length);
-
+   
       // Pass serialized data and session flag into template
       res.render('view-classes', { 
         subjects, 
