@@ -1,28 +1,24 @@
-# Brighteducation ![license](https://img.shields.io/badge/license-MIT-blue)
+# BrightEducation ![license](https://img.shields.io/badge/license-MIT-blue)
   
-  # Table of Contents
+  # Table of Content
   - [Description](#Description)
   - [Installation](#Installation)
   - [Usage](#Usage)
   - [License](#License)
   - [Contribution](#Contribution)
   - [Tests](#Tests)
-  - [Questions](#Questions)
   - [Preview](#Preview)
+  - [Accreditations](#Accreditations)
 
    
 ## Description:
-Welcome to the future of education! With Bright Education, you can enroll your child into any class where they may need to brush up on some skills or want to be challenged at a higher level. With our professionally certified teaching staff, we gurantee to enrich your child's education no matter the cause. Sign up today to view the available courses we have to offer and match with a tutor!   
+Welcome to the future of education! With BrightEducation, you can enroll your child into any class where they may need to brush up on some skills or want to be challenged at a higher level. With our professionally certified teaching staff, we guarantee to enrich your child's education no matter the cause. Sign up today to view the available courses we have to offer and match with a tutor!
     
 ## Installation:
 You can find our app available online and ready to use. Just click [here](https://brighteducation.herokuapp.com/) and create your account today!
     
 ## Usage:
-Visit our app at https://brighteducation.herokuapp.com and signup today! If you are already a member, just login to your account to view classes and your enrollments. 
-
-Upon loading the page, you should be presented with the main page. If you head towards the upper right corner you are given the option to sign up or log in. If you click on sign up you will be directed to a sign up page in which you will provide user credentials. Once you are logged in, the navigation bar will show classes. 
-
-Below is a screenshot of what the site should look like once you've gotten to the main page before you log in. There are additional screenshots within the public/screenshots folder.
+Visit our app at https://brighteducation.herokuapp.com and you should be presented with the main page. If you head towards the upper right corner you are given the option to sign up or log in. If you click on sign up you will be directed to a sign up page in which you will provide user credentials. Once you are logged in, the navigation bar will show available classes to enroll in.
 
 ## License:
 Copyright 2022, Team 7
@@ -41,10 +37,8 @@ Bryan Sayavong, Cosmin Sandu, Joon Lee, Sheetal Jawale, & Stephen Novelli
 ## Test:
 No tests are required.
     
-## Questions:
-  If you have any questions regarding the app please refer to the contact details below. <br/>
-  Github:  <br/>
-  email: 
-
 ## Preview:
-![Preview](./public/images/Brighteducation.jpg)
+![Preview](./public/images/Brighteducation2.jpg)
+
+## Accreditations:
+  BrightEducation was styled using the Bulma Framework and utilizes Handlebars.js as the primary templating language. MySQL is used as our database management system, while Express.js builds our RESTful API with the Node.js framework. BrightEducation is deployed for use publicly via Heroku.
