@@ -1,6 +1,6 @@
 # Brighteducation ![license](https://img.shields.io/badge/license-MIT-blue)
   
-  # Table of Content
+  # Table of Contents
   - [Description](#Description)
   - [Installation](#Installation)
   - [Usage](#Usage)
@@ -19,6 +19,10 @@ You can find our app available online and ready to use. Just click [here](https:
     
 ## Usage:
 Visit our app at https://brighteducation.herokuapp.com and signup today! If you are already a member, just login to your account to view classes and your enrollments. 
+
+Upon loading the page, you should be presented with the main page. If you head towards the upper right corner you are given the option to sign up or log in. If you click on sign up you will be directed to a sign up page in which you will provide user credentials. Once you are logged in, the navigation bar will show classes. 
+
+Below is a screenshot of what the site should look like once you've gotten to the main page before you log in. There are additional screenshots within the public/screenshots folder.
 
 ## License:
 Copyright 2022, Team 7
