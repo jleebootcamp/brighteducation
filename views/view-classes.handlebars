@@ -50,4 +50,8 @@
   {{/if}}
 </div>
 
-<script src="./js/classes.js"></script>
+  {{#if subjects.length}}
+  <script src="../../js/classes.js"></script>
+  {{else}}
+  <script src="./js/classes.js"></script>
+  {{/if}}

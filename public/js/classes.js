@@ -24,30 +24,43 @@ const newFormHandler = async (event) => {
 };
 
  //Display subjects
- const showClasses = async () => {
+const showClasses = async () => {
+  document.location = "/api/subjects/";
+  document
+  .querySelector('.class-list')
+  .addEventListener('click', delButtonHandler);
 
-    const response = await fetch(`/api/subjects/`, {
-      method: 'GET',    
-    });
+};
 
-    console.log(response);
+//  const showClasses = async () => {
 
-  //   if (response.ok) {
-  //     // document.location.replace('/view-classes');  
-  //     const subjects = response.map((subject) => subject.get({ plain: true }));
-  //     res.render('view-classes', { 
-  //       subjects, 
-  //       logged_in: req.session.logged_in 
-  //     });
-  //   } else {
-  //     alert('Failed to display classes');
-  //  }
-  };
+//     const response = await fetch(`/api/subjects/`, {
+//       method: 'GET',    
+//     });
+//     console.log(response);
+//     console.log(response.body)
+
+//     if (response.ok) {
+//       // document.location.replace('/view-classes');  
+//       const subjects = response.map((subject) => subject.get({ plain: true }));
+//       console.log(subjects);
+
+//       res.render('view-classes', { 
+//         subjects, 
+//         logged_in: req.session.logged_in 
+//       });
+//     } else {
+//       alert('Failed to display classes');
+//    }
+//   };
 
 // Delete Class
 const delButtonHandler = async (event) => {
+  console.log('can you see me');
+  
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
+    
 
     const response = await fetch(`/api/subjects/${id}`, {
       method: 'DELETE',
