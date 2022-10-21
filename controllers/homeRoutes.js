@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Users, Subjects, Tutors } = require('../models');
+const { Users, Subjects, Tutors, Students } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -40,7 +40,9 @@ router.get('/login', async (req, res) => {
 
 router.get('/my-student', async (req, res) => {
   try{
-    res.render('my-student');
+    let students = await Students.findAll();
+    students = students.map(student => student.get({plain:true}));
+    res.render('my-student', {students});
   } catch (err) {
     res.status(500).json(err);
   }
